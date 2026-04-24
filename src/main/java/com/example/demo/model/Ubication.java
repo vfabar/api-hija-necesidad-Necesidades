@@ -27,6 +27,6 @@ public class Ubication {
     private String street;
 
     @ManyToOne
-    @JoinColumn(name = "distric_id",nullable = false)
-    private Distric distric;
+    @JoinColumn(name = "idDistric",nullable = false)
+    private Distric idDistric;
 }

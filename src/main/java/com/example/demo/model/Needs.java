@@ -28,9 +28,9 @@ public class Needs {
 
     @ManyToOne
     @JoinColumn(name = "idNeedsState", nullable = false)
-    private NeedsState needsState;
+    private NeedsState idNeedsState;
 
     @ManyToOne
     @JoinColumn(name = "idNeedsType", nullable = false)
-    private NeedsType needsType;
+    private NeedsType idNeedsType;
 }
