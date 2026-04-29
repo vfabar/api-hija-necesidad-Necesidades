@@ -33,4 +33,8 @@ public class Needs {
     @ManyToOne
     @JoinColumn(name = "idNeedsType", nullable = false)
     private NeedsType idNeedsType;
+
+    @ManyToOne
+    @JoinColumn(name = "idUbication", nullable = false)
+    private Ubication idUbication;
 }
