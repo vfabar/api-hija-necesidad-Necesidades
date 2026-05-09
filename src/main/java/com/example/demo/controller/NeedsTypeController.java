@@ -16,7 +16,7 @@ import com.example.demo.model.NeedsType;
 import com.example.demo.service.NeedsTypeService;
 
 @RestController
-@RequestMapping("/api/v1/NeedsType")
+@RequestMapping("/NeedsType")
 public class NeedsTypeController {
     
        

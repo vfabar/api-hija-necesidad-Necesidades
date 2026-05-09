@@ -16,7 +16,7 @@ import com.example.demo.service.UbicationService;
 import com.example.demo.model.Ubication;
 
 @RestController
-@RequestMapping("/api/v1/ubication")
+@RequestMapping("/ubication")
 public class UbicationController {
 
     @Autowired
