@@ -3,6 +3,7 @@ package com.example.demo.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.webmvc.autoconfigure.WebMvcProperties.Apiversion.Use;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.dto.LoginRequest;
 import com.example.demo.model.User;
 import com.example.demo.service.UserService;
 
@@ -51,6 +53,19 @@ public class UserController {
         userService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginRequest> login(@RequestBody LoginRequest req) {
+        User user = userService.findByEmail(req.getEmail());
+        if (user == null){return ResponseEntity.badRequest().build();}
+        if (!user.getPassword().equals(req.getContrasena())){
+            return ResponseEntity.badRequest().build();
+        }
+        
+            
+        return ResponseEntity.ok().body(req);
+    }
+
 
 }
 

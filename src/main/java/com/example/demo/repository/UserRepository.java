@@ -7,5 +7,7 @@ import com.example.demo.model.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-    
+    public User findByEmail(String email);
+
+
 }
