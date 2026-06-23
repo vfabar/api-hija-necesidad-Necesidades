@@ -27,6 +27,6 @@ public class Distric {
     private String distric;
 
     @ManyToOne
-    @JoinColumn (name = "region_id", nullable = false)
-    private Region region;
+    @JoinColumn (name = "idRegion", nullable = false)
+    private Region idRegion;
 }

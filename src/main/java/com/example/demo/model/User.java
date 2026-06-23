@@ -27,10 +27,10 @@ public class User {
     @Column(name = "email", nullable = false)
     private String email;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", nullable = false,length = 255)
     private String password;
 
     @ManyToOne
-    @JoinColumn(name = "user_type_id",nullable = false)
-    private UserType userType;
+    @JoinColumn(name = "idUserType",nullable = false)
+    private UserType idUserType;
 }

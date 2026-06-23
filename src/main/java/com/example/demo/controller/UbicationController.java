@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ import com.example.demo.service.UbicationService;
 import com.example.demo.model.Ubication;
 
 @RestController
-@RequestMapping("/api/v1/ubication")
+@RequestMapping("/ubication")
 public class UbicationController {
 
     @Autowired
@@ -40,9 +41,9 @@ public class UbicationController {
     }
 
     @PostMapping
-    public ResponseEntity<Ubication> createUbication(Ubication ubication) {
+    public ResponseEntity<Ubication> createUbication(@RequestBody Ubication ubication) {
         Ubication savedUbication = ubicationService.save(ubication);
-        return ResponseEntity.ok(savedUbication);
+        return ResponseEntity.status(201).body(savedUbication);
     }
 
     @DeleteMapping("/{id}")
